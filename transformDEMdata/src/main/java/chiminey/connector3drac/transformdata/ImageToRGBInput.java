@@ -18,12 +18,12 @@ public class ImageToRGBInput
 		try 
 		{
 			//Select image
-			File file = new File("blue.png");
+			File file = new File(args[0]);
 
 			BufferedImage image = ImageIO.read(file);
 		    int pixels[][] = convertTo2DUsingGetRGB(image);
 		    //write to txt
-		    FileWriter writer = new FileWriter(new File("output.TXT"));
+		    FileWriter writer = new FileWriter(new File(args[1]));
 		    int counter = 0;
 			for (int j = 0; j < image.getHeight(); j++) 
 			{

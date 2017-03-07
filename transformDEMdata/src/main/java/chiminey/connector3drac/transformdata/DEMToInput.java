@@ -24,7 +24,7 @@ import javax.imageio.ImageIO;
 public class DEMToInput 
 {
 
-	public void transformDEM(String fileName)
+	public void transformDEM(String fileName, String output)
 	{
 		copyDataFile(fileName);
 		int ncols,nrows;
@@ -76,7 +76,7 @@ public class DEMToInput
 				}
 			}
 			reader.close();
-			FileWriter writer = new FileWriter(new File(fileName));
+			FileWriter writer = new FileWriter(new File(output));
 			for(String r : newRows)
 			{
 //				System.out.println(r);
@@ -123,7 +123,7 @@ public class DEMToInput
 		DEMToInput app = new DEMToInput();
 //		app.shiftBits(app.extractFileName(), app.extractChannel());
 //		app.shiftBits(args[0], args[1]);
-		app.transformDEM("dem_old");
+		app.transformDEM(args[0], args[1]);
 		
 		
 	}
